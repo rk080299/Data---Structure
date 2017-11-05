@@ -2,6 +2,8 @@
 
 ## Linked Lists
 
+Added Delete Alternate node.cpp
+
 ## Trees
 
-### Added Height of binary tree
+#### Added Height of binary tree
