@@ -1,21 +1,23 @@
 #include<iostream>
 using namespace std;
 
-/*void swap( int x,int y)
-{ int temp;
-   temp=x;
-   x=y;
-   y=temp;
-}*/
+
 int main()
 
 {
 	int n,m,i,j,k,temp;
-	cin>>n>>m;
+	cout<<"Enter Size of First Array"<<"\n";
+	cin>>n;
+	cout<<"Enter Size of Second Array"<<"\n";	
+	cin>>m;
+	
 	int a[n],b[m],c[n+m];
+	
+	cout<<"Enter Elements of First Array"<<"\n";
 	for( i=0;i<n;i++)
 		cin>>a[i];
 	
+	cout<<"Enter Elements of Second Array"<<"\n";
 	for(i=0;i<m;i++)
 		cin>>b[i];
 	
@@ -29,36 +31,38 @@ int main()
 	   }
 	}
 
-      /* for(i=0;i<n;i++)
-		cout<<a[i];
-*/
+
 	for( i=0;i<m-1;i++)
 	 { for ( j=i+1;j<m;j++)
 	     { if(b[i]>b[j])
-		 temp=b[i];
+	      { temp=b[i];
 		b[i]=b[j];
 		b[j]=temp;
 	     }
-	  }
+	   }
+	 }
 
-	for(i=j=k=0;i<=m+n; )
+	for(i=j=k=0;i<m+n; )
 	{ if (a[j] <= b[k])
 		c[i++]=a[j++];
 	  else
  		c[i++]=b[k++];
-           if(j==n+1 || k==m+1)
+           if(j==n || k==m)
 		break;
          }
 		
-	for(; j<=n;)
-	 { 
+	for(; j<n;) 
 	   c[i++]=a[j++];
-	  }
-	for(;k<=m;)
-	 { 
-	   c[i++]=b[k++];
-	  }
 
+	for(;k<m;)
+	   c[i++]=b[k++];
+
+	cout<<"Final Array"<<"\n";
+	
 	for( i=0;i<m+n;i++)
-	cout<<c[i]<<" ";
+	 cout<<c[i]<<" ";
+
+return 0;
+
 }
+
